@@ -9,7 +9,7 @@ def printTable(tableData):
     for mainList in tableData:
         maximumLengthOfItem = 0
         
-        for subItem in mainList[len(mainList)]:
+        for subItem in mainList:
             lengthOfItem = len(subItem)
             if lengthOfItem > maximumLengthOfItem:
                 maximumLengthOfItem = lengthOfItem
@@ -18,9 +18,10 @@ def printTable(tableData):
         
     
     for i in range(len(tableData[0])):
+        str = ''
         for j in range(len(tableLengthList)):
-            print(tableData[j][i].rjust(tableLengthList[j]))
-            
+            str = str + tableData[j][i].rjust(tableLengthList[j]) + ' '
+        print(str)   
         
 printTable(tableData)
 
