@@ -13,3 +13,19 @@ print('os.path.isfile(/home/jovyan/binder): '+ str(os.path.isfile('/home/jovyan/
 print('os.path.isfile(/home/jovyan/binder/Index.ipynb): '+ str(os.path.isfile('/home/jovyan/binder/Index.ipynb')))
 print('os.path.isdir(/home/jovyan/binder): '+ str(os.path.isdir('/home/jovyan/binder')))
 print('os.path.isdir(/home/jovyan/binder/Index.ipynb): '+ str(os.path.isdir('/home/jovyan/binder/Index.ipynb')))
+
+
+#os.getcwd(): /home/jovyan/binder
+#os.listdir(os.getcwd()): ['Index.ipynb', 'environment.yml', 'apt.txt', 'Untitled.ipynb', 'Untitled1.ipynb', '.ipynb_checkpoints']
+#os.path.getsize(os.getcwd()): 4096
+#os.path.split(os.getcwd()): ('/home/jovyan', 'binder')
+#os.path.basename(os.getcwd()): binder
+#os.path.dirname(os.getcwd()): /home/jovyan
+#os.path.isabs(os.getcwd()): True
+#os.path.abspath(binder): /home/jovyan/binder/binder
+#os.path.relpath(os.getcwd,/home/): ../home/jovyan/binder
+#os.path.exists(os.getcwd): True
+#os.path.isfile(/home/jovyan/binder): False
+#os.path.isfile(/home/jovyan/binder/Index.ipynb): True
+#os.path.isdir(/home/jovyan/binder): True
+#os.path.isdir(/home/jovyan/binder/Index.ipynb): False
