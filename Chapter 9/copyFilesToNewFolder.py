@@ -1,17 +1,17 @@
 import os, shutil
 
-print('Before adding files:' +os.listdir())
+print(os.listdir())
 
-open('test.jpg','a').close()
-open('abc.pdf','a').close()
-os.makedirs('newFolder')
-
-newFolderAbsolutePath = os.path.abspath('newFolder')
+newFolderAbsolutePath = os.path.abspath('./newFolder')
 
 for filename in os.listdir():
     if filename.endswith('.pdf') or filename.endswith('.jpg'):
         shutil.move(filename,newFolderAbsolutePath)
     else:
-        countine
+        continue
 
-print('After adding files:' +os.listdir(newFolderAbsolutePath))
+print(os.listdir(newFolderAbsolutePath))
+
+#Output
+#['Index.ipynb', 'environment.yml', 'apt.txt', 'newFolder', 'abc.pdf', 'test.jpg', 'Untitled.ipynb', '.ipynb_checkpoints']
+#['abc.pdf', 'test.jpg']
