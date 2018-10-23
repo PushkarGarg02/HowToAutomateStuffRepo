@@ -14,7 +14,7 @@ makingBold.font = Font(bold=True)
 
 #Making entry for rows
 row = 1
-for column in range(1,8):
+for column in range(1,int(sys.argv[1])+2):
 	columnLetter = get_column_letter(column)
 	if columnLetter+str(row) == 'A1':
 		continue
@@ -25,7 +25,7 @@ for column in range(1,8):
 #Making entry for columns
 column=1
 columnLetter = get_column_letter(column)
-for row in range(1,8):
+for row in range(1,int(sys.argv[1])+2):
 	if columnLetter+str(row) == 'A1':
 		continue
 	else:
@@ -34,8 +34,8 @@ for row in range(1,8):
 		
 #Making rest of the entry		
 rowLetter = get_column_letter(1)
-for row in range(2,8):
-	for column in range(2,8):
+for row in range(2,int(sys.argv[1])+2):
+	for column in range(2,int(sys.argv[1])+2):
 		columnLetter = get_column_letter(column)
 		sheet[columnLetter+str(row)] = sheet[columnLetter+str(1)].value * sheet[rowLetter+str(row)].value
 
