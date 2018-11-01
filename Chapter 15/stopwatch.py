@@ -9,7 +9,6 @@ starttime = time.time()
 lasttime = starttime
 lapNum = 1
 stringtext = ''
-copiedtext = ''
 try:
 	while True:
 		input()
@@ -17,11 +16,11 @@ try:
 		totaltime = round(time.time() - starttime,2)
 		stringtext = 'Lap #%s: %s (%s)' % (str(lapNum).rjust(2), str(totaltime).rjust(8), str(laptime).rjust(8))
 		print(stringtext,end='')
-		copiedtext = '\n' + copiedtext + stringtext 
+		pyperclip.copy(stringtext) 
 		lapNum += 1
 		lasttime = time.time()
 except KeyboardInterrupt:
-	pyperclip.copy(copiedtext)
+	
 	print('\nDone')
 	
 
