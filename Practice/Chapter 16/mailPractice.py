@@ -70,3 +70,31 @@ print(actualmessage.get_subject())
 print(actualmessage.get_addresses('from')) #Return a list of tuples
 print(actualmessage.get_addresses('to')) #Return a list of tuples
 print(actualmessage.get_addresses('cc')) #Return a list tuples
+
+if actualmessage.text_part != None:
+	print(actualmessage.text_part.get_payload().decode(actualmessage.text_part.charset))
+	'''
+	'So long, and thanks for all the fish!\r\n\r\n-Al\r\n'
+	'''
+if actualmessage.html_part != None:
+	print(actualmessage.html_part.get_payload().decode(actualmessage.html_part.charset))
+	'''
+	'<div dir="ltr"><div>So long, and thanks for all the fish!<br><br></div>-Al
+	<br></div>\r\n'
+	'''
+
+#How to delete the mails by using the UIDs
+imapObject.delete_messages(UIDs)
+'''
+{40066: ('\\Seen', '\\Deleted')}
+'''
+
+#Below command will delete the deleted messages permanently and for gmail it is automatically done when above command is executed
+imapObject.expunge()
+'''
+('Success', [(5452, 'EXISTS')])
+'''
+
+#Disconnecting from the IMAP Server
+imapObject.logout()
+
